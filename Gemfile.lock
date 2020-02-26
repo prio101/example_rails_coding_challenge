@@ -50,6 +50,9 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.0)
+    capybara-screenshot (1.0.24)
+      capybara (>= 1.0, < 4)
+      launchy
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
@@ -211,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
+  capybara-screenshot
   coffee-rails (~> 4.1.0)
   database_cleaner
   email_spec

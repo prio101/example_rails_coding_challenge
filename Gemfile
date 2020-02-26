@@ -58,4 +58,5 @@ group :test do
   gem 'poltergeist'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'capybara-screenshot'
 end

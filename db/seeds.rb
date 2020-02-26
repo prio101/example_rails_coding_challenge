@@ -22,46 +22,40 @@ end
 
 4.times do
 	Customer.create(
-		[ 
-			{ 
-				first_name: Faker::Name.unique.first_name, 
-				last_name: Faker::Name.last_name 
-			}
-		]
+		first_name: Faker::Name.unique.first_name, 
+		last_name: Faker::Name.last_name 
 	)
 end
 
-if(Customer.exists?(1))
-	# status: successful
-  5.times { CustomSeed.transaction_body(1, :successful) }
-	
-	# status: disputed
-	CustomSeed.transaction_body(1, :disputed)
-end
+# status: successful
+5.times { CustomSeed.transaction_body(1, 0) }
 
-if(Customer.exists?(2))
-	# status: successful
-	3.times { CustomSeed.transaction_body(2, :successful) }
-	
-	# status: disputed
-	CustomSeed.transaction_body(2, :disputed)
-end
+# status: disputed
+CustomSeed.transaction_body(1, 2)
 
-if(Customer.exists?(3))
-	# successful
-	CustomSeed.transaction_body(3, :successful)
-	
-	# failed
-	3.times	{	CustomSeed.transaction_body(3, :failed) }
-end
 
-if(Customer.exists?(4))
-	# successful
-	CustomSeed.transaction_body(4, :successful)
+# status: successful
+3.times { CustomSeed.transaction_body(2, 0) }
 
-	# failed
-	2.times { CustomSeed.transaction_body(4, :failed) }
-end
+# status: disputed
+CustomSeed.transaction_body(2, 2)
+
+
+
+# successful
+CustomSeed.transaction_body(3, 0)
+
+# failed
+3.times	{	CustomSeed.transaction_body(3, 1) }
+
+
+
+# successful
+CustomSeed.transaction_body(4, 0)
+
+# failed
+2.times { CustomSeed.transaction_body(4, 1) }
+
 
 
 

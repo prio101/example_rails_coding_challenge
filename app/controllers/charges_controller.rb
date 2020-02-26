@@ -1,8 +1,8 @@
 class ChargesController < ApplicationController
   def index
-    @charges_failed = Transaction.where(status: 'failed')
-    @charges_successful = Transaction.where(status: 'successful')
-    @charges_disputed = Transaction.where(status: 'disputed')
+    @charges_failed = Transaction.where(status: 1)
+    @charges_successful = Transaction.where(status: 0)
+    @charges_disputed = Transaction.where(status: 2)
   end
 
   def charges
