@@ -1,0 +1,39 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  font-family: 'Roboto Mono', 'sans-serif' ;
+}
+
+.logo{
+  background-color: #0288D1;
+  width: 200px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+}
+
+.header{
+  background-color: #0288D1;
+  width: 500px;
+  margin-left: 25%;
+  border-radius: 15px;
+}
+
+.header h3{
+  padding-left: 20px;
+  color: #fff;
+}
+
+.header p{
+  padding: 20px;
+  color: #fff;
+}
+
+.failed-row{
+  background-color: #FF0000;
+}
+
+.disputed-row{
+  background-color: #FF5400;
+}
