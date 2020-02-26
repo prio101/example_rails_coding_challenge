@@ -41,7 +41,7 @@ end
 
 if(Customer.exists?(2))
 	# status: successful
-	5.times { CustomSeed.transaction_body(2, :successful) }
+	3.times { CustomSeed.transaction_body(2, :successful) }
 	
 	# status: disputed
 	CustomSeed.transaction_body(2, :disputed)
@@ -60,7 +60,7 @@ if(Customer.exists?(4))
 	CustomSeed.transaction_body(4, :successful)
 
 	# failed
-	4.times { CustomSeed.transaction_body(4, :failed) }
+	2.times { CustomSeed.transaction_body(4, :failed) }
 end
 
 
