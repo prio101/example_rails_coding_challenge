@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="header">
+    <img src="https://web.showmojo.com/wp-content/uploads/2018/06/Logo_-_white-30-high.png" class="logo">
+    <h3>Rails Challenge ShowMojo</h3> 
+    <p>Submitted by: Mahabub Islam</p>
+  </div>
+
+  
+  <div class="failed">
+    <h3>Failed Charges</h3>
+      
+      <% @charges_failed.each do |charge| %> 
+      <ol class="failed-row"> 
+        <li>Name: <%= charge.customer.name %></li>
+        <li>Amount: <%= charge.to_money %> [Converted Cents to USD Dollar]</li>
+        <li>Created At: <%= charge.created_at.strftime('%Y-%m-%d') %> and Unix Time: <%= charge.unix_epoch_time_created_at %></li>
+      </ol>  
+      <% end %>
+      
+  </div>
+  
+
+
+  <div class="disputed">
+     <h3>Disputed Charges</h3>
+      
+        <% @charges_disputed.each do |charge| %>   
+        <ol class="disputed-row">   
+          <li>Name: <%= charge.customer.name %></li>
+          <li>Amount: <%= charge.to_money %> [Converted Cents to USD Dollar]</li>
+          <li>Created At: <%= charge.created_at.strftime('%Y-%m-%d') %> and Unix Time: <%= charge.unix_epoch_time_created_at %></li>
+        </ol>  
+        <% end %>
+        <ol class="failed-row"> 
+          <li>Name: Example Name</li>
+          <li>Amount: 457 [Converted Cents to USD Dollar]</li>
+          <li>Created At: 2020-02-20 and Unix Time: 4578121254</li>
+        </ol>    
+  </div>
+
+
+  <div class="successful">
+    <h3>Successful Charges</h3>
+        <% @charges_successful.each do |charge| %>
+        <ol class="successful-row">
+          <li>Name: <%= charge.customer.name %></li>
+          <li>Amount: <%= charge.to_money %> [Converted Cents to USD Dollar]</li>
+          <li>Created At: <%= charge.created_at.strftime('%Y-%m-%d') %> and Unix Time: <%= charge.unix_epoch_time_created_at %></li>  
+        </ol>  
+        <% end %>
+  </div>
+
+</div>
